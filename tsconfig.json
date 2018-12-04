@@ -19,7 +19,6 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
   },
-  "include": ["src/public/*", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
     "node_modules",
     "build",
