@@ -1,13 +1,17 @@
 import * as React from 'react';
+import { Redirect } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import './InitialPage.css';
+import './Home.css';
 const electron = window.require('electron');
 
 export interface IProps {
   name: string;
 }
 
-class InitialPage extends React.Component {
+class Home extends React.Component {
+  public state = {
+    isRedirect: false
+  };
   constructor(props: IProps) {
     super(props);
     this.openSelectDirDialog = this.openSelectDirDialog.bind(this);
@@ -24,12 +28,18 @@ class InitialPage extends React.Component {
           return;
         }
         console.log(fileNames);
+        this.setState(() => {
+          return { isRedirect: true };
+        });
       }
     );
     return;
   }
 
   public render() {
+    if (this.state.isRedirect) {
+      return <Redirect to="/navibar" />;
+    }
     return (
       <div className="d-flex flex-column justify-content-center align-items-center layout">
         <div className="align-self-center element">
@@ -49,4 +59,4 @@ declare global {
   }
 }
 
-export default InitialPage;
+export default Home;
