@@ -3,7 +3,8 @@
   "rules": {
     "no-console": false, //Disable for typescript,
     "object-literal-sort-keys": false,
-    "interface-name": false
+    "interface-name": false,
+    "jsx-no-lambda": false
   },
   "jsRules": {
     "no-console": false //Disable for javascript

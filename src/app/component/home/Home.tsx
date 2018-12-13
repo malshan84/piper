@@ -38,7 +38,7 @@ class Home extends React.Component {
 
   public render() {
     if (this.state.isRedirect) {
-      return <Redirect to="/navibar" />;
+      return <Redirect to="/workspace" />;
     }
     return (
       <div className="d-flex flex-column justify-content-center align-items-center layout">
